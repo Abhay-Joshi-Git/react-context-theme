@@ -21,3 +21,20 @@ code {
 #root {
   height: 100%;
 }
+
+#modal-root {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(155, 179, 160, 0.8);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#modal-root:empty {
+  display: none;
+}

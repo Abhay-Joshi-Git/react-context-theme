@@ -1,18 +1,10 @@
 import React, { useState, useContext } from 'react';
 import ThemeContext from '../theme/ThemeContext';
 import { getThemeDetailsByType } from '../theme/theme-model';
-import './Employee.css'
-
-const employeesData = [
-    {
-        name: 'Pete',
-        department: 'engineering'
-    },
-    {
-        name: 'Suzan',
-        department: 'Sales'
-    }
-];
+import './Employee.css';
+import { Modal } from '../sharable/Modal';
+import { employeesData } from './Employee-data';
+import EmployeeForm from './employee-form/EmployeeForm';
 
 const Employee = ({ data, themeDetails }) => (
     <li className="list-item"
@@ -25,12 +17,16 @@ const Employee = ({ data, themeDetails }) => (
 
 export default () => {
     const [ employees, setEmployees ] = useState(employeesData);
+    const [ showModal, setShowModal ] = useState(false);
     const { theme }  = useContext(ThemeContext);
     const themeDetails = getThemeDetailsByType(theme.activeTheme);
+
+    const toggleModal = () => setShowModal(!showModal);
+
     return (
         <>
             <h2>Employees List</h2>
-            <ul class="list-container">
+            <ul className="list-container">
                 {
                     employees.length
                     ? (
@@ -39,10 +35,31 @@ export default () => {
                     : null
                 }
             </ul>
+            {
+                showModal
+                ? <Modal>
+                    <EmployeeForm
+                        header="Add Employee"
+                        onSubmit={({name, department}) => {
+                            toggleModal();
+                            setEmployees([
+                                ...employees,
+                                {
+                                    name,
+                                    department
+                                }
+                            ])
+                        }}
+                        onCancel={toggleModal}
+                    />
+                  </Modal>
+                : null
+            }
             <div style={ {  marginTop: '50px' }}>
                 <button
-                    onClick={() => setEmployees(employeesData)}
-                    style={{ backgroundColor: themeDetails.primaryBgColor, color: themeDetails.primaryColor, minHeight: '2.5rem', minWidth: '4rem', fontSize: '1.15rem' }}
+                    onClick={toggleModal}
+                    className="button"
+                    style={{ backgroundColor: themeDetails.primaryBgColor, color: themeDetails.primaryColor }}
                 >Add</button>
             </div>
         </>

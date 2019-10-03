@@ -21,14 +21,14 @@ export const elementThemeDetails = {
         primaryColor: 'black',
         secondaryBgColor: 'brown',
         secondaryColor: 'white',
-        secondaryBoxShadow: '6px 6px 6px rgba(225, 69, 10, 0.4)'
+        secondaryBoxShadow: '5px 5px 5px rgba(225, 69, 100, 0.4)',
     },
     light: {
         primaryBgColor: 'rebeccapurple',
         primaryColor: 'white',
         secondaryBgColor: 'powderblue',
         secondaryColor: 'black',
-        secondaryBoxShadow: '6px 6px 6px rgba(155, 79, 10, 0.4)'
+        secondaryBoxShadow: '5px 5px 5px rgba(155, 79, 10, 0.4)',
     }
 }
 

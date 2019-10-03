@@ -1,0 +1,32 @@
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fields-container {
+    border: none;
+    padding: 16px;
+}
+
+.button {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.form-input {
+    min-height: 1.75rem;
+    font-size: 1.15rem;
+    margin: 8px 4px;
+    width: 100%;
+    border-width: 0.5px;
+}
+
+.header {
+    text-align: center;
+}
+
+.emp-form-container {
+    box-shadow: 5px 5px 5px black;
+    border-radius: 15px;
+    padding: 2rem;
+}

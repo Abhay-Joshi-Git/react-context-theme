@@ -9,3 +9,10 @@
     margin-bottom: 1rem;
     border-radius: 15px;
 }
+
+.button {
+    min-height: 2.5rem;
+    min-width: 4rem;
+    font-size: 1.15rem;
+    border: none;
+}

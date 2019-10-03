@@ -30,7 +30,7 @@ export default () => {
             <select
                 id="theme-select"
                 value={theme.activeTheme}
-                style={ { ...themeSelectStyle, backgroundColor: themeDetails.primaryBgColor, color: themeDetails.primaryColor, } }
+                style={ { ...themeSelectStyle, backgroundColor: themeDetails.primaryBgColor, color: themeDetails.primaryColor, border: 'none' } }
                 onChange={(e) => setTheme({ ...theme, activeTheme: +e.target.value })}
             >
                 {availableTheme.map(t => (<option value={t.value} key={t.value}>{t.displayName}</option>))}
