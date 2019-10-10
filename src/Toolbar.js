@@ -20,7 +20,8 @@ const themeSelectStyle = {
     fontSize: '1.15rem'
 };
 
-export default () => {
+export default React.memo(({ theme: themeProp }) => {
+    console.log('rendering toolbar......');
     const { theme, setTheme }  = useContext(ThemeContext);
     const themeDetails = getThemeDetailsByType(theme.activeTheme);
 
@@ -37,4 +38,4 @@ export default () => {
             </select>
         </div>
     );
-}
+})
